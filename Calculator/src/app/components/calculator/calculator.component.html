@@ -2,9 +2,9 @@
   <div class="jumbotron">
     <h3>Calculator</h3>
     <div class="form-control text-right input mt-4">{{ input }}</div>
-    <div class="form-control text-right input mt-2"></div>
-    <div class="form-control text-right input mt-2"></div>
-    <div class="form-control text-right input mt-2"></div>
+    <div class="form-control text-right input mt-2">{{ answer }}</div>
+    <div class="form-control text-right input mt-2">{{ binaryAndHexadecimalAnswer.toString(2) }}</div>
+    <div class="form-control text-right input mt-2">{{ binaryAndHexadecimalAnswer.toString(16) }}</div>
 
     <div class="row mt-2">
       <div class="col-2">
@@ -68,7 +68,7 @@
         <div class="btn btn-dark btn-block" (click)="addNumber('.')">.</div>
       </div>
       <div class="col-2">
-        <div class="btn btn-dark btn-block">=</div>
+        <div class="btn btn-dark btn-block" (click)="calculate()">=</div>
       </div>
       <div class="col-2">
         <div class="btn btn-info btn-block" (click)="addOperator('^2')">^2</div>
