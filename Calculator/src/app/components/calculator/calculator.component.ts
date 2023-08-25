@@ -28,6 +28,7 @@ export class CalculatorComponent {
         return;
       }else if(this.input == ""){
         this.input = "0.";
+        this.numberOfDecimalPoints++;
         return;
       }
       else if(lastKey == "/" || lastKey == "*" || lastKey === "-" || lastKey === "+" || lastKey == "(" || lastKey == "√" || lastKey == ")" || secondLastKey == "^"){
@@ -107,13 +108,16 @@ export class CalculatorComponent {
     this.resultService.addAnswer(this.result);
     this.resultService.addFormula(formula);
     this.resultService.addIntAnswer(this.binaryAndHexadecimalAnswer);
-    this.input = "";
+    this.clear()
   }
 
   clear() : void {
     this.input = "";
     this.answer = 0;
     this.binaryAndHexadecimalAnswer = 0;
+    this.numberOfDecimalPoints = 0;
+    this.counterRight = 0;
+    this.counterLeft = 0;
   }
 
   clearLast() : void{
