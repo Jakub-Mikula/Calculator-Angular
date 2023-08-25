@@ -5,11 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class ResultService {
   constructor() { }
-  answers : number[] = [];
+  answers : string[] = [];
   intAnswers : number[] = [];
   formulas : string[] = [];
 
-  addAnswer(answer: number) {
+  addAnswer(answer: string) {
     this.removeAnswerAndFormula();
     this.answers.unshift(answer);
   }
