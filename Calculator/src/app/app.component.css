@@ -10,4 +10,5 @@ app-calculator{
 app-results{
   width: 50%;
   margin-top: 20px;
+  margin-right: 20px;
 }
