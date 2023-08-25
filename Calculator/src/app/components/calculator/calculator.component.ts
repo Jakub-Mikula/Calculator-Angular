@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ResultService} from "../../result.service";
 
 @Component({
   selector: 'app-calculator',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent {
+  constructor(private resultService : ResultService) {
+  }
   input : string = "";
   counterLeft : number = 0;   //counter for left bracket (
   counterRight : number = 0; //counter for right bracket ')'
@@ -99,7 +102,9 @@ export class CalculatorComponent {
     console.log("Result " + this.result)
     this.answer = parseFloat(this.result);
     this.binaryAndHexadecimalAnswer = parseInt(this.result);
-
+    this.resultService.addAnswer(this.answer);
+    this.resultService.addFormula(formula);
+    this.resultService.addIntAnswer(this.binaryAndHexadecimalAnswer);
     this.input = "";
   }
 
