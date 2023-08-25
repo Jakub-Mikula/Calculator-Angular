@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ResultService } from "../../result.service";
 
 @Component({
   selector: 'app-results',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent {
-
+    constructor(private resultService : ResultService) {
+    }
+    answers = this.resultService.getAllAnswers();
+    formulas = this.resultService.getAllFormulas();
+    intAnswers = this.resultService.getAllIntAnswers();
 }
