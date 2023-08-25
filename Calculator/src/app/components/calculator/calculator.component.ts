@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ResultService} from "../../result.service";
+import { ResultService } from "../../result.service";
 
 @Component({
   selector: 'app-calculator',
@@ -54,14 +54,16 @@ export class CalculatorComponent {
     let secondLastKey = this.input[this.input.length-2]; // second last char in input (used for ^2)
     if (lastKey == "."){ //cannot use operator after "."
       return;
-    }else if((secondLastKey == "^") && (operator == "√")){  //cannot use ^2 and √ after ^2
+    }else if((secondLastKey == "^") && (operator == "√")){  //cannot use √ after ^2
+      return;
+    }
+    else if (operator == "√"){
+      this.numberOfDecimalPoints = 0;
+      this.counterLeft++;
+      this.input = this.input + operator + "(";
       return;
     }else if(lastKey === "/" || lastKey === "*" || lastKey === "-" || lastKey === "+" || lastKey == "(" || lastKey === "√"){
       //if last char is operator as well u cant continue
-      return;
-    }else if (operator == "√"){
-      this.numberOfDecimalPoints = 0;
-      this.input = this.input + operator + "(";
       return;
     }else{
       this.numberOfDecimalPoints = 0;

@@ -23,7 +23,7 @@ export class ResultService {
   }
 
   removeAnswerAndFormula(){
-    if (this.answers.length == 3){
+    if (this.answers.length == 20){
       this.answers.pop();
       this.intAnswers.pop();
       this.formulas.pop();

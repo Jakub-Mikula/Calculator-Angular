@@ -6,3 +6,8 @@ app-calculator{
   width: 50%;
   margin-top: 20px;
 }
+
+app-results{
+  width: 50%;
+  margin-top: 20px;
+}
