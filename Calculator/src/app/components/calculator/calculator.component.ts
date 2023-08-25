@@ -104,7 +104,7 @@ export class CalculatorComponent {
     console.log("Result " + this.result)
     this.answer = parseFloat(this.result);
     this.binaryAndHexadecimalAnswer = parseInt(this.result);
-    this.resultService.addAnswer(this.answer);
+    this.resultService.addAnswer(this.result);
     this.resultService.addFormula(formula);
     this.resultService.addIntAnswer(this.binaryAndHexadecimalAnswer);
     this.input = "";

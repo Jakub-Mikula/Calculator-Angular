@@ -11,10 +11,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let answer of answers; let intAnswer of intAnswers; index as index">
+    <tr *ngFor="let intAnswer of intAnswers; index as index">
       <th scope="row">{{index + 1}}</th>
       <td>{{formulas.at(index)}}</td>
-      <td>{{answer}}</td>
+      <td>{{answers.at(index)}}</td>
       <td>{{intAnswer.toString(2)}}</td>
       <td>{{intAnswer.toString(16)}}</td>
     </tr>
