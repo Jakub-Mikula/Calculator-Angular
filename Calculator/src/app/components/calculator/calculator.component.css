@@ -2,6 +2,13 @@
   width: 80%;
   margin: auto;
 }
+h3{
+  margin-top: 0px;
+}
+.jumbotron{
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
 
 .input{
   width: 82.5%;
